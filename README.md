@@ -1,5 +1,8 @@
 # l2x_synthetic
 
+![build status](https://github.com/dunnkers/l2x_synthetic/actions/workflows/python-app.yml/badge.svg)
+
+
 Exposes synthetic dataset generation code from [L2X](https://arxiv.org/pdf/1802.07814.pdf) as a **pip** package. To install, run:
 
 ```shell
