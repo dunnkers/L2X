@@ -1,16 +1,32 @@
-# L2X synthetic datasets
+# l2x_synthetic
 
-Code to generate synthetic datasets from [L2X](https://arxiv.org/pdf/1802.07814.pdf) available as a **pip** package. To install, run:
+Exposes synthetic dataset generation code from [L2X](https://arxiv.org/pdf/1802.07814.pdf) as a **pip** package. To install, run:
 
 ```shell
-pip install git+https://github.com/dunnkers/L2X.git
+pip install git+https://github.com/dunnkers/l2x_synthetic.git
 ```
+
+(in case module cannot be found: try [other methods](https://www.reddit.com/r/Python/comments/2crput/how_to_install_with_pip_directly_from_github/) to install directory from a Github repo.)
 
 You can now create the synthetic datasets like:
 
 ```python
 from l2x_synthetic.make_data import generate_data
-X, y, datatypes = generate_data(n=1000, datatype='orange_skin', seed=0)
+X, y = generate_data(n=1000, datatype='orange_skin', seed=0)
+```
+
+✨
+
+## API
+`generate_data` function:
+
+```python
+def generate_data(
+    n: int = 100,
+    datatype: str = '',
+    seed:int = 0,
+    as_frame: bool = False
+)
 ```
 
 As a `datatype` you can input:
@@ -20,8 +36,9 @@ As a `datatype` you can input:
 - `switch`
 
 ## Dependencies
-Requires:
-- `numpy`
+```shell
+pip install -r requirements.txt
+```
 
 ## About
 See the original repo:

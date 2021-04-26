@@ -4,6 +4,7 @@ This script contains functions for generating synthetic data.
 Part of the code is based on https://github.com/Jianbo-Lab/CCM
 """ 
 import numpy as np
+import pandas as pd
 
 def generate_XOR_labels(X):
     y = np.exp(X[:,0]*X[:,1])
@@ -37,25 +38,29 @@ def generate_additive_labels(X):
 
 
 
-def generate_data(n=100, datatype='', seed = 0, val = False):
+def generate_data(n=100, datatype='', seed=0, as_frame=False):
     """
     Generate data (X,y)
     Args:
-        n(int): number of samples 
-        datatype(string): The type of data 
-        choices: 'orange_skin', 'XOR', 'regression'.
-        seed: random seed used
+        n (int): number of samples 
+        datatype (str): The type of data 
+            ('orange_skin' | 'XOR' | 'nonlinear_additive' | 'switch')
+        seed (int): random seed used
+        as_frame (bool): return data as DataFrame.
     Return: 
-        X(float): [n,d].  
-        y(float): n dimensional array. 
+        X (float): [n, d].  
+        y (float): n dimensional array. 
+        OR
+        df (pd.core.DataFrame): DataFrame containing features with the column names
+            {X1, ..., Xp} and targets {Y1, ..., Y2}
     """
+    assert datatype in ['orange_skin', 'XOR', 'nonlinear_additive', 'switch']
 
     np.random.seed(seed)
 
     X = np.random.randn(n, 10)
 
-    datatypes = None 
-
+    datatypes = None
     if datatype == 'orange_skin': 
         y = generate_orange_labels(X) 
 
@@ -89,5 +94,18 @@ def generate_data(n=100, datatype='', seed = 0, val = False):
         X,y = X[perm_inds],y[perm_inds]
         datatypes = datatypes[perm_inds]
 
+    if as_frame:
+        n, p = X.shape
+        feature_names = [f'X{i}' for i in range(1, p + 1)]
+        features = pd.DataFrame(X, columns=feature_names)
 
-    return X, y, datatypes  
+        n, p = y.shape
+        target_names = [f'Y{i}' for i in range(1, p + 1)]
+        targets = pd.DataFrame(y, columns=target_names)
+
+        df = features.join(targets)
+        df['datatypes'] = datatypes
+
+        return df
+    else:
+        return X, y
