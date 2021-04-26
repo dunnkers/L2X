@@ -1,32 +1,29 @@
-# L2X 
+# L2X synthetic datasets
 
-Code for replicating the experiments in the paper [Learning to
-Explain: An Information-Theoretic Perspective on Model
-Interpretation](https://arxiv.org/pdf/1802.07814.pdf) at ICML 2018, by Jianbo
-Chen, Mitchell Stern, Martin J. Wainwright, Michael I. Jordan.
+Code to generate synthetic datasets from [L2X](https://arxiv.org/pdf/1802.07814.pdf) available as a **pip** package. To install, run:
+
+```shell
+pip install git+https://github.com/dunnkers/L2X.git
+```
+
+You can now create the synthetic datasets like:
+
+```python
+from l2x_synthetic.make_data import generate_data
+X, y, datatypes = generate_data(n=1000, datatype='orange_skin', seed=0)
+```
+
+As a `datatype` you can input:
+- `orange_skin`
+- `nonlinear_additive`
+- `XOR`
+- `switch`
 
 ## Dependencies
-The code for L2X runs with Python and requires Tensorflow of version 1.2.1 or higher and Keras of version 2.0 or higher. Please `pip install` the following packages:
+Requires:
 - `numpy`
-- `tensorflow` 
-- `keras`
-- `pandas`
-- `nltk`
 
-Or you may run the following and in shell to install the required packages:
-```shell
-git clone https://github.com/Jianbo-Lab/L2X
-cd L2X
-sudo pip install -r requirements.txt
-```
-See README.md in respective folders for details.
-## Citation
-If you use this code for your research, please cite our [paper](https://arxiv.org/pdf/1802.07814.pdf):
-```
-@arxiv{chen2018learning,
-title = {Learning to Explain: An Information-Theoretic Perspective on Model Interpretation},
-author = {Chen, Jianbo and Song, Le and Wainwright, Martin J and Jordan, Michael I}, 
-journal={arXiv preprint arXiv:1802.07814}, 
-year = {2018}  
-}
-```
+## About
+See the original repo:
+
+[https://github.com/Jianbo-Lab/L2X/](https://github.com/Jianbo-Lab/L2X/)
