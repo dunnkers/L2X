@@ -3,9 +3,7 @@ This script contains functions for generating synthetic data.
 
 Part of the code is based on https://github.com/Jianbo-Lab/CCM
 """ 
-from __future__ import print_function
-import numpy as np  
-from scipy.stats import chi2
+import numpy as np
 
 def generate_XOR_labels(X):
     y = np.exp(X[:,0]*X[:,1])
