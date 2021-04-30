@@ -1,6 +1,6 @@
 # l2x_synthetic
 
-![build status](https://github.com/dunnkers/l2x_synthetic/actions/workflows/python-app.yml/badge.svg)
+[![build status](https://github.com/dunnkers/l2x_synthetic/actions/workflows/python-app.yml/badge.svg)](https://github.com/dunnkers/l2x_synthetic/actions/workflows/python-app.yml) [![pypi badge](https://img.shields.io/pypi/v/l2x_synthetic.svg?maxAge=3600)](https://pypi.org/project/l2x_synthetic/)
 
 
 Exposes synthetic dataset generation code from [L2X](https://arxiv.org/pdf/1802.07814.pdf) as a **pip** package. To install, run:
@@ -8,8 +8,6 @@ Exposes synthetic dataset generation code from [L2X](https://arxiv.org/pdf/1802.
 ```shell
 pip install l2x_synthetic
 ```
-
-(in case module cannot be found: try [other methods](https://www.reddit.com/r/Python/comments/2crput/how_to_install_with_pip_directly_from_github/) to install directory from a Github repo.)
 
 You can now create the synthetic datasets like:
 
