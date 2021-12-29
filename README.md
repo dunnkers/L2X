@@ -1,6 +1,6 @@
 # l2x_synthetic
 
-[![build status](https://github.com/dunnkers/l2x_synthetic/actions/workflows/python-app.yml/badge.svg)](https://github.com/dunnkers/l2x_synthetic/actions/workflows/python-app.yml) [![pypi badge](https://img.shields.io/pypi/v/l2x_synthetic.svg?maxAge=3600)](https://pypi.org/project/l2x_synthetic/)
+[![build status](https://github.com/dunnkers/l2x_synthetic/actions/workflows/python-app.yml/badge.svg)](https://github.com/dunnkers/l2x_synthetic/actions/workflows/python-app.yml) [![pypi badge](https://img.shields.io/pypi/v/l2x_synthetic.svg?maxAge=3600)](https://pypi.org/project/l2x_synthetic/) [![Downloads](https://pepy.tech/badge/l2x-synthetic)](https://pepy.tech/project/l2x-synthetic)
 
 
 Exposes synthetic dataset generation code from [L2X](https://arxiv.org/pdf/1802.07814.pdf) as a **pip** package. To install, run:
