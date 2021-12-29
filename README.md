@@ -22,25 +22,35 @@ Which generates new data every time you call `get_data()` ✨. Use `random_state
 ## API
 Available generators:
 
-**XORGenerator**
+### **XORGenerator**
 ```python
 from l2x_synthetic import XORGenerator
 ```
 
-**Orange Skin generator**
+Relevant features: `[0, 1]`
+
+### Orange Skin generator
 ```python
 from l2x_synthetic import OrangeGenerator
 ```
 
-**Non-linear additive generator**
+Relevant features: `[0, 1, 2, 3]`
+
+### Non-linear additive generator
 ```python
 from l2x_synthetic import AdditiveGenerator
 ```
 
-**Switch generator: combines orange labels and non-linear additive**
+Relevant features: `[0, 1, 2, 3]`
+
+### Switch generator: combines orange labels and non-linear additive
 ```python
 from l2x_synthetic import SwitchGenerator
 ```
+
+Relevant features for `X[:n//2]` (first 1/2 of dataset): `[0, 1, 2, 3]`
+
+Relevant features for `X[n//2:]` (second 1/2 of dataset): `[4, 5, 6, 7]`
 
 ### Generator API
 
